@@ -51,6 +51,7 @@ main(int argc,
     int input;
 
     std::cin >> input;
+    if (!std::cin) break;
     std::cout << (input + 1) << std::endl;
   }
   return 0; /* Muerte despues de una vida productiva */
