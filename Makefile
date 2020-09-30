@@ -2,13 +2,12 @@
 BINDIR=bin
 .phony: all clean ${BINDIR}
 
-all:
+all: ${BINDIR}/suicidalprocess ${BINDIR}/casinormalprocess ${BINDIR}/normalprocess
+
 SRCDIR=src
 OBJECTS=${SRCDIR}/suicidalprocess.o ${SRCDIR}/casinormalprocess.o \
 ${SRCDIR}/normalprocess.o
 CXXFLAGS=-Wno-div-by-zero -Wall
-
-all: ${BINDIR}/suicidalprocess ${BINDIR}/casinormalprocess ${BINDIR}/normalprocess
 
 ${BINDIR}/suicidalprocess: ${SRCDIR}/suicidalprocess.o ${BINDIR}
 	g++ -o $@ ${SRCDIR}/suicidalprocess.o
